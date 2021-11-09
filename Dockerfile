@@ -1,11 +1,11 @@
 FROM node:12-alpine
 
-WORKDIR /usr/app
+WORKDIR /usr/5sim1
 
 COPY . .
 
-RUN npm i
+RUN npm install
 
 EXPOSE 3000
 
-CMD ["npm","run dev"]
+CMD ["npm","start"]

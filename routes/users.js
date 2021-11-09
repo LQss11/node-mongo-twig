@@ -16,14 +16,18 @@ const storageData = multer.diskStorage({
     }
 });
 
-const upload = multer({ storage : storageData })
+const upload = multer({ storage: storageData })
 
 /**
  * @Path /users
  **/
 router.route("/create")
-  .get(userController.showCreateForm)
-  .post(upload.single("avatar") ,userController.createUser)
+    .get(userController.showCreateForm)
+    .post(upload.single("avatar"), userController.createUser)
+
+router.route("/signin")
+    .get(userController.showSignInForm)
+    .post(userController.userSignIn)
 
 router.get("/", userController.getListUsers)
 router.get("/:_id", userController.getUserById)

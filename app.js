@@ -5,11 +5,13 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const mongoose = require("mongoose");
 
-mongoose.connect("mongodb://database_service/revsion_5sim1")
+//mongoose.connect("mongodb://database_service/5sim1-test-docker")
+
+mongoose.connect("mongodb://localhost:27017/revsion_5sim1")
+
   .then(()=>{ console.log("db connected"); })
   .catch((exc)=> console.log(exc));
 
-var usersRouter = require('./routes/users');
 
 var app = express();
 
@@ -23,7 +25,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+var usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
+
+var studentsRouter = require('./routes/students');
+app.use('/students', studentsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
