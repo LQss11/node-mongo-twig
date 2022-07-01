@@ -1,11 +1,11 @@
 # node-mongo-twig
-This project is a template that is easy and available to use a node.js applicatiing using mongo database and twig templating engine all in one place.
+This project is a template that is easy and available to use as a node.js application using the mongo database and twig templating engine all in one place.
 ## Info
 You can run the application by setting up docker containers running the **docker-compose.yaml** file with:
 ```sh
 docker-compose up --build
 ```
-You can check the following urls to test:
+You can check the following URLs to test:
 | Link | Action |
 | ---- | ------ |
 |[http://localhost:30030/users/create](http://localhost:30030/users/create)|Create new user        |
